@@ -1446,7 +1446,7 @@ blockquote cite {
 
 /* Footer */
 .footer {
-    background: var(--color-dark);
+    background: #666666; /* A clean, neutral silver grey */
     color: var(--color-white);
     padding: 4rem 0 2rem;
 }
