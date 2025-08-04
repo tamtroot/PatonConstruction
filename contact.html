@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Paton Construction Ltd for professional groundworks and recycling services in West Lothian">
+    <title>Contact Us | Paton Construction Ltd</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Images/Logo.png">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact Paton Construction Ltd">
+    <meta property="og:description" content="Get in touch for groundworks and recycling services in West Lothian">
+    <meta property="og:image" content="Images/Logo.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="Images/Logo.png" alt="Paton Construction Ltd Logo">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle Navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in Touch for Professional Solutions</p>
+        </div>
+    </header>
+
+    <!-- Contact Information -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Call Us</h3>
+                    <p>Available during business hours</p>
+                    <a href="tel:07795231734">07795 231734</a>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>We'll respond within 24 hours</p>
+                    <a href="mailto:patonconstructionltd@gmail.com">patonconstructionltd@gmail.com</a>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>Based in West Lothian</p>
+                    <address>West Calder, West Lothian, Scotland</address>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday</p>
+                    <p>7:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form action="https://formspree.io/f/your-formspree-endpoint" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Required</label>
+                            <select id="service" name="service">
+                                <option value="">Select a Service</option>
+                                <option value="crushing">Onsite Crushing & Recycling</option>
+                                <option value="groundworks">Groundworks</option>
+                                <option value="aggregate">Aggregate & Soil Processing</option>
+                                <option value="agricultural">Agricultural Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">
+                            Send Message
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map and Additional Info -->
+                <div class="contact-info-container">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35769.98340853921!2d-3.5941360887892775!3d55.86030312317645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48879ea1a76e7e8f%3A0x3932b503ce436c82!2sWest%20Calder%2C%20UK!5e0!3m2!1sen!2s!4v1709824006247!5m2!1sen!2s"
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    
+                    <div class="additional-info">
+                        <h3>Quick Response Guaranteed</h3>
+                        <p>We pride ourselves on rapid response times and professional service. Contact us today to discuss your project requirements.</p>
+                        
+                        <div class="social-contact">
+                            <h3>Connect With Us</h3>
+                            <div class="social-links">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">
+                                    <i class="fab fa-facebook"></i>
+                                    <span>Follow on Facebook</span>
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Follow on Instagram</span>
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">
+                                    <i class="fab fa-twitter"></i>
+                                    <span>Follow on Twitter</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <img src="Images/Logo.png" alt="Paton Construction Ltd Logo" class="footer-logo">
+                    <p>Professional groundworks and recycling services in West Lothian</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> <a href="tel:07795231734">07795 231734</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:patonconstructionltd@gmail.com">patonconstructionltd@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> West Calder, West Lothian, Scotland</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Paton Construction Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
