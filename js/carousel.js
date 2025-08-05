@@ -1,70 +1,56 @@
-class TestimonialCarousel {
-    constructor() {
-        this.currentSlide = 0;
-        this.slides = document.querySelectorAll('.testimonial-slide');
-        this.dots = document.querySelectorAll('.carousel-dot');
-        this.prevBtn = document.querySelector('.carousel-btn.prev');
-        this.nextBtn = document.querySelector('.carousel-btn.next');
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.testimonial-carousel');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentSlide = 0;
 
-        if (this.slides.length > 0) {
-            this.init();
-        }
-    }
-
-    init() {
-        // Show first slide
-        this.showSlide(0);
-
-        // Add event listeners
-        if (this.prevBtn) {
-            this.prevBtn.addEventListener('click', () => this.navigate(-1));
-        }
-        if (this.nextBtn) {
-            this.nextBtn.addEventListener('click', () => this.navigate(1));
-        }
-
-        // Add dot click events
-        this.dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => this.showSlide(index));
-        });
-
-        // Auto advance slides every 5 seconds
-        setInterval(() => this.navigate(1), 5000);
-    }
-
-    showSlide(index) {
-        // Handle index bounds
-        if (index >= this.slides.length) {
-            index = 0;
-        } else if (index < 0) {
-            index = this.slides.length - 1;
-        }
-
-        // Update current slide
-        this.currentSlide = index;
-
+    // Function to update slide visibility
+    function showSlide(index) {
         // Hide all slides
-        this.slides.forEach(slide => {
+        slides.forEach(slide => {
             slide.style.opacity = '0';
             slide.style.visibility = 'hidden';
         });
 
-        // Show current slide
-        this.slides[this.currentSlide].style.opacity = '1';
-        this.slides[this.currentSlide].style.visibility = 'visible';
+        // Show the current slide
+        slides[index].style.opacity = '1';
+        slides[index].style.visibility = 'visible';
 
         // Update dots
-        this.dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === this.currentSlide);
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Event listeners for buttons
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+    }
+
+    // Event listeners for dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
         });
-    }
+    });
 
-    navigate(direction) {
-        this.showSlide(this.currentSlide + direction);
-    }
-}
-
-// Initialize carousel when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new TestimonialCarousel();
+    // Auto advance slides every 5 seconds
+    setInterval(nextSlide, 5000);
 });

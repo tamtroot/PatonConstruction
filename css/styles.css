@@ -284,7 +284,7 @@ section {
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(rgba(0,51,102,0.9), rgba(0,51,102,0.9)), url('../Images/Hero.jpg');
+    background: linear-gradient(rgba(0,51,102,0.4), rgba(0,51,102,0.4)), url('../Images/Hero.png');
     background-size: cover;
     background-position: center;
     color: var(--color-white);
@@ -785,6 +785,11 @@ section {
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
+.testimonial-slide:first-child {
+    opacity: 1;
+    visibility: visible;
+}
+
 .testimonial-content {
     background: var(--color-white);
     padding: 3rem;
@@ -835,6 +840,9 @@ section {
     cursor: pointer;
     transition: var(--transition);
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel-btn:hover {
@@ -854,6 +862,22 @@ section {
     justify-content: center;
     gap: 0.5rem;
     margin-top: 2rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: var(--color-primary);
+    transform: scale(1.2);
 }
 
 .carousel-dot {
