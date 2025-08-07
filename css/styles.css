@@ -223,6 +223,12 @@ section {
     transition: transform 0.5s ease;
 }
 
+.showcase-image.certification-image {
+    object-fit: contain;
+    background: white;
+    padding: 1rem;
+}
+
 .showcase-overlay {
     position: absolute;
     bottom: 0;
@@ -307,7 +313,7 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    align-items: center;
+    align-items: start;
 }
 
 .overview-content {
@@ -441,6 +447,10 @@ section {
         padding-right: 0;
     }
 
+    .overview-image {
+        margin-top: 1rem;
+    }
+
     .expertise-image {
         order: -1;
     }
@@ -540,6 +550,15 @@ section {
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
+.image-grid img.certification-image {
+    object-fit: contain;
+    background: white;
+    padding: 1rem;
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
 /* Responsive Design for Services Page */
 @media (max-width: 768px) {
     .service-content {
@@ -618,6 +637,12 @@ section {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+}
+
+.gallery-item img.certification-image {
+    object-fit: contain;
+    background: white;
+    padding: 1rem;
 }
 
 .gallery-item:hover img {
@@ -1284,11 +1309,15 @@ blockquote cite {
 }
 
 .info-card a,
-.info-card address {
+.info-card address,
+.info-card a {
     color: var(--color-dark);
     text-decoration: none;
     font-style: normal;
     transition: var(--transition);
+    word-break: break-word;
+    display: block;
+    padding: 0 0.5rem;
 }
 
 .info-card a:hover {
