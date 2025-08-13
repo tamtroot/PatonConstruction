@@ -131,6 +131,13 @@
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
                         
+                        <div class="form-group">
+                            <label for="consent">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                By submitting this form, you agree to our <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy.</a>
+                            </label>
+                        </div>
+                        
                         <button type="submit" class="submit-button">
                             Send Message
                             <i class="fas fa-paper-plane"></i>
@@ -142,7 +149,9 @@
                 <div class="contact-info-container">
                     <div class="map-container">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35769.98340853921!2d-3.5941360887892775!3d55.86030312317645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48879ea1a76e7e8f%3A0x3932b503ce436c82!2sWest%20Calder%2C%20UK!5e0!3m2!1sen!2s!4v1709824006247!5m2!1sen!2s"
+                            id="contactMap"
+                            src="about:blank"
+                            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35769.98340853921!2d-3.5941360887892775!3d55.86030312317645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48879ea1a76e7e8f%3A0x3932b503ce436c82!2sWest%20Calder%2C%20UK!5e0!3m2!1sen!2s!4v1709824006247!5m2!1sen!2s"
                             width="100%" 
                             height="300" 
                             style="border:0;" 
@@ -150,6 +159,10 @@
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
+                        <div class="map-consent-overlay" id="mapConsentOverlay">
+                            <p>Google Maps may set non-essential cookies. To view the map, please accept cookies. See our <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
+                            <button class="cookie-btn accept" id="acceptCookiesMap">Accept and load map</button>
+                        </div>
                     </div>
                     
                     <div class="additional-info">
@@ -170,6 +183,17 @@
             </div>
         </div>
     </section>
+
+    <!-- Cookie Banner (Contact page) -->
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner" hidden>
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+            <p style="margin: 0;">We use cookies that may be set by embedded services such as Google Maps to provide site functionality. See our <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
+            <div class="cookie-actions">
+                <button class="cookie-btn reject" id="cookieReject" aria-label="Reject non-essential cookies">Reject</button>
+                <button class="cookie-btn accept" id="cookieAccept" aria-label="Accept cookies">Accept</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

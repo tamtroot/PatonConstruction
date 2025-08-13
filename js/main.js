@@ -52,4 +52,73 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
         }
     });
+
+    // Contact form: disable submit until consent checked
+    const consentCheckbox = document.getElementById('consent');
+    const formSubmitButton = document.querySelector('.contact-form .submit-button');
+    if (consentCheckbox && formSubmitButton) {
+        // Initialize disabled state
+        formSubmitButton.disabled = !consentCheckbox.checked;
+        consentCheckbox.addEventListener('change', () => {
+            formSubmitButton.disabled = !consentCheckbox.checked;
+        });
+    }
+
+    // Cookie consent logic (contact page)
+    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieAccept = document.getElementById('cookieAccept');
+    const cookieReject = document.getElementById('cookieReject');
+    const mapIframe = document.getElementById('contactMap');
+    const mapOverlay = document.getElementById('mapConsentOverlay');
+
+    const COOKIE_KEY = 'paton_cookie_consent'; // values: 'accepted' | 'rejected'
+
+    function loadMapIfAllowed() {
+        if (!mapIframe || !mapIframe.dataset || !mapIframe.dataset.src) return;
+        const consentAccepted = localStorage.getItem(COOKIE_KEY) === 'accepted';
+        const currentSrcAttr = mapIframe.getAttribute('src');
+        if (consentAccepted) {
+            if (!currentSrcAttr || currentSrcAttr === '' || currentSrcAttr === 'about:blank') {
+                mapIframe.setAttribute('src', mapIframe.dataset.src);
+            }
+            if (mapOverlay) mapOverlay.style.display = 'none';
+        } else {
+            if (mapOverlay) mapOverlay.style.display = 'flex';
+        }
+    }
+
+    // First-visit banner
+    if (cookieBanner && !localStorage.getItem(COOKIE_KEY)) {
+        cookieBanner.hidden = false;
+        // Show overlay for the map until a choice is made
+        if (mapOverlay) mapOverlay.style.display = 'flex';
+    }
+
+    if (cookieAccept) {
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem(COOKIE_KEY, 'accepted');
+            if (cookieBanner) cookieBanner.hidden = true;
+            loadMapIfAllowed();
+        });
+    }
+
+    if (cookieReject) {
+        cookieReject.addEventListener('click', () => {
+            localStorage.setItem(COOKIE_KEY, 'rejected');
+            if (cookieBanner) cookieBanner.hidden = true;
+            if (mapOverlay) mapOverlay.style.display = 'flex';
+        });
+    }
+
+    const acceptCookiesMap = document.getElementById('acceptCookiesMap');
+    if (acceptCookiesMap) {
+        acceptCookiesMap.addEventListener('click', () => {
+            localStorage.setItem(COOKIE_KEY, 'accepted');
+            if (cookieBanner) cookieBanner.hidden = true;
+            loadMapIfAllowed();
+        });
+    }
+
+    // On load, decide whether to load the map
+    loadMapIfAllowed();
 });
