@@ -288,6 +288,24 @@ section {
     text-align: center;
 }
 
+/* Improve CTA button contrast and spacing on blue bar */
+.cta .cta-button {
+    background: var(--color-white);
+    color: var(--color-primary);
+    border: 2px solid var(--color-white);
+}
+
+.cta .cta-button:hover {
+    background: transparent;
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+/* Add spacing between adjacent CTA buttons anywhere */
+.cta-button + .cta-button {
+    margin-left: 0.75rem;
+}
+
 /* Page Header */
 .page-header {
     background: linear-gradient(rgba(0,51,102,0.4), rgba(0,51,102,0.4)), url('../Images/Hero.png');
