@@ -952,6 +952,18 @@ section {
     background: var(--color-primary);
 }
 
+/* Fix: ensure testimonial content isn't clipped when only one slide is used */
+.testimonial-carousel .carousel-container {
+    overflow: visible;
+    min-height: auto;
+}
+
+.testimonial-carousel .testimonial-slide {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+}
+
 .submit-testimonial {
     padding: 4rem 0;
     text-align: center;
