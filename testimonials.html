@@ -60,6 +60,9 @@
     <section class="testimonials-section">
         <div class="container">
             <div class="testimonial-carousel">
+                <button class="carousel-btn prev" aria-label="Previous testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
                 <div class="carousel-container">
                     <div class="testimonial-slide">
                         <div class="testimonial-content">
@@ -71,11 +74,39 @@
                             <div class="testimonial-author">
                                 <div class="author-info">
                                     <h3>John Turnbull</h3>
-                                    <p>Persimmon Homes</p>
+                                    <p class="company-name">
+                                        <img src="Images/persimmon-logo-2022.png" alt="Persimmon Homes Logo" class="company-logo" onerror="this.style.display='none'">
+                                        Persimmon Homes
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <blockquote>
+                                <p>I recently had the opportunity to work alongside Paton on a project in a busy residential area. Their workmanship, professionalism, and commitment to resident care was outstanding. The operatives on site were highly knowledgeable and approachable, which was also reflected in the Clerk of Works reports.</p>
+                                <p>I would be more than happy to work with Paton again in the future.</p>
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h3>Stuart Bell</h3>
+                                    <p class="company-name">
+                                        <img src="Images/4120828_cala-group_150th_creative_logo_white_rgb_sunshine_yellow.svg" alt="CALA Homes Logo" class="company-logo cala-logo" onerror="this.style.display='none'">
+                                        CALA HOMES
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" aria-label="Next testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" aria-label="Go to testimonial 1"></button>
+                    <button class="carousel-dot" aria-label="Go to testimonial 2"></button>
                 </div>
             </div>
         </div>
@@ -123,5 +154,6 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
 </body>
 </html>
