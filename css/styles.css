@@ -152,6 +152,48 @@ section {
     padding: 4rem 0;
 }
 
+/* Expansion Teaser - slim feature band */
+.expansion-teaser {
+    padding: 2rem 0;
+    background: #f5f7fa;
+    text-align: center;
+}
+
+.expansion-teaser .container {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.expansion-teaser h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+}
+
+.expansion-teaser p {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+    color: var(--color-dark);
+}
+
+.expansion-teaser .teaser-button {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    border: 2px solid var(--color-primary);
+    border-radius: 25px;
+    transition: var(--transition);
+}
+
+.expansion-teaser .teaser-button:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
 .intro {
     background: var(--color-light);
     text-align: center;
@@ -653,6 +695,19 @@ section {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+}
+
+.gallery-section-heading {
+    grid-column: 1 / -1;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin: 2rem 0 0 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+.gallery-section-heading:first-child {
+    margin-top: 0;
 }
 
 .gallery-item {

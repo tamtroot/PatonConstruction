@@ -73,6 +73,46 @@
     <section class="gallery-section">
         <div class="container">
             <div class="gallery-grid">
+                <!-- New Premises -->
+                <h2 class="gallery-section-heading" id="gallery-heading-new-premises">New Premises</h2>
+                <div class="gallery-item" data-category="preparation">
+                    <img src="Images/Exterior Dusk Shot.jpg" alt="New office building exterior">
+                    <div class="gallery-overlay">
+                        <h3>New Premises</h3>
+                        <p>New office building exterior</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="preparation">
+                    <img src="Images/Yard Groundwork in progress.jpg" alt="Yard development underway">
+                    <div class="gallery-overlay">
+                        <h3>Yard Development</h3>
+                        <p>Yard development underway</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="preparation">
+                    <img src="Images/Excavator Shot.jpg" alt="Groundworks in progress at new operational base">
+                    <div class="gallery-overlay">
+                        <h3>New Operational Base</h3>
+                        <p>Groundworks in progress at new operational base</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="preparation">
+                    <img src="Images/Entrance Detail.jpg" alt="Entrance groundworks completed">
+                    <div class="gallery-overlay">
+                        <h3>Entrance Groundworks</h3>
+                        <p>Entrance groundworks completed</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="preparation">
+                    <img src="Images/Entrance Detail 2.jpg" alt="Entrance groundworks completed">
+                    <div class="gallery-overlay">
+                        <h3>Entrance Groundworks</h3>
+                        <p>Entrance groundworks completed</p>
+                    </div>
+                </div>
+
+                <!-- Other Projects -->
+                <h2 class="gallery-section-heading" id="gallery-heading-other">Other Projects</h2>
                 <!-- Infrastructure & Utilities -->
                 <div class="gallery-item" data-category="infrastructure">
                     <img src="Images/Photo1.jpeg" alt="Manhole Installation">
@@ -212,6 +252,8 @@
         document.addEventListener('DOMContentLoaded', () => {
             const filterBtns = document.querySelectorAll('.filter-btn');
             const galleryItems = document.querySelectorAll('.gallery-item');
+            const headingNewPremises = document.getElementById('gallery-heading-new-premises');
+            const headingOther = document.getElementById('gallery-heading-other');
 
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -228,6 +270,12 @@
                             item.style.display = 'none';
                         }
                     });
+
+                    // Show/hide section headings: New Premises only has preparation items
+                    if (headingNewPremises && headingOther) {
+                        headingNewPremises.style.display = (filter === 'all' || filter === 'preparation') ? '' : 'none';
+                        headingOther.style.display = '';
+                    }
                 });
             });
         });
